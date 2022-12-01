@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="source/Day01/Part1.fs" />
+    <Compile Include="source/Day01/Part2.fs" />
     <Compile Include="source/Program.fs" />
   </ItemGroup>
 </Project>
