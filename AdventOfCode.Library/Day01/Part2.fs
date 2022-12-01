@@ -1,4 +1,4 @@
-module Day01.Part2
+module AdventOfCode.Library.Day01.Part2
 
 let solve (input: string) : string =
     input.Split "\n\n"

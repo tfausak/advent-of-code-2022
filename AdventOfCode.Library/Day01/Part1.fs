@@ -1,4 +1,4 @@
-module Day01.Part1
+module AdventOfCode.Library.Day01.Part1
 
 let span (predicate: 'T -> bool) (source: 'T seq) : 'T seq * 'T seq =
     (Seq.takeWhile predicate source, Seq.skipWhile predicate source)
