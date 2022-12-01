@@ -1,0 +1,13 @@
+{
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Ionide.Ionide-fsharp"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/dotnet": {}
+    },
+    "image": "mcr.microsoft.com/devcontainers/base:debian"
+}
