@@ -5,7 +5,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v3
-      - run: dotnet build
+      - run: dotnet test
       - run: dotnet tool restore
       - run: dotnet fantomas --check --recurse .
-      - run: dotnet fsharplint lint aoc.fsproj
+      - run: dotnet fsharplint lint AdventOfCode.sln
