@@ -3,7 +3,10 @@
     "vscode": {
       "extensions": [
         "Ionide.Ionide-fsharp"
-      ]
+      ],
+      "settings": {
+        "editor.tabSize": 4
+      }
     }
   },
   "features": {
