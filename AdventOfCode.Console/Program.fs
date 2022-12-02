@@ -1,7 +1,5 @@
 open AdventOfCode.Library
 
-exception UnknownArgumentsException of string[]
-
 [<EntryPoint>]
 let main (arguments: string[]) : int =
     let input = stdin.ReadToEnd()
@@ -10,7 +8,8 @@ let main (arguments: string[]) : int =
         match arguments with
         | [| "1"; "1" |] -> Day01.Part1.solve input
         | [| "1"; "2" |] -> Day01.Part2.solve input
-        | _ -> raise (UnknownArgumentsException arguments)
+        | [| "2"; "1" |] -> Day02.Part1.solve input
+        | _ -> failwith $"unknown arguments: %A{arguments}"
 
     printfn $"%s{output}"
     0
