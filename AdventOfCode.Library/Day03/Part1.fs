@@ -1,5 +1,8 @@
 module AdventOfCode.Library.Day03.Part1
 
+let priority (x: char) : int =
+    int x - if System.Char.IsUpper x then 38 else 96
+
 let solve (input: string) : string =
     input.Split "\n"
     |> Seq.filter (System.String.IsNullOrWhiteSpace >> not)
@@ -9,9 +12,5 @@ let solve (input: string) : string =
         let second = line.Substring mid
         let both = Set.intersect (Set.ofSeq first) (Set.ofSeq second)
         Set.toSeq both)
-    |> Seq.sumBy (fun x ->
-        if System.Char.IsUpper x then
-            int x - int 'A' + 27
-        else
-            int x - int 'a' + 1)
+    |> Seq.sumBy priority
     |> string
