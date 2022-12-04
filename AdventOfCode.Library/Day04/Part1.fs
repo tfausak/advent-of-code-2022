@@ -2,14 +2,17 @@ module AdventOfCode.Library.Day04.Part1
 
 open AdventOfCode.Library.Common
 
-let solve (input : string) : string =
+let contains (inner: 'a * 'b) (outer: 'a * 'b) : bool =
+    fst outer <= fst inner && snd outer >= snd inner
+
+let solve (input: string) : string =
     input.Split "\n"
-    |> Seq.filter (System.String.IsNullOrWhiteSpace >> not)
-    |> Seq.map (fun line -> line.Split ",")
-    |> Seq.map (Seq.map (fun line -> line.Split "-"))
-    |> Seq.map (Seq.map (Seq.map int))
-    |> Seq.map (Seq.map (seqToTuple >> Option.get))
-    |> Seq.map (seqToTuple >> Option.get)
-    |> Seq.filter (fun ((xl, xh), (yl, yh)) -> xl <= yl && xh >= yh || yl <= xl && yh >= xh)
+    |> Seq.filter (fun line -> line <> "")
+    |> Seq.map (fun l1 ->
+        l1.Split ","
+        |> Seq.map (fun l2 -> l2.Split "-" |> Seq.map int |> seqToTuple |> Option.get)
+        |> seqToTuple
+        |> Option.get)
+    |> Seq.filter (fun (x, y) -> contains x y || contains y x)
     |> Seq.length
     |> string
