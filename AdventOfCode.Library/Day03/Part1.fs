@@ -5,7 +5,7 @@ let priority (x: char) : int =
 
 let solve (input: string) : string =
     input.Split "\n"
-    |> Seq.filter (System.String.IsNullOrWhiteSpace >> not)
+    |> Seq.filter (fun line -> line <> "")
     |> Seq.collect (fun line ->
         let mid = line.Length / 2
         let first = line.Substring(0, mid)

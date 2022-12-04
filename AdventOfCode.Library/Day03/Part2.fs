@@ -4,7 +4,7 @@ open AdventOfCode.Library.Day03.Part1
 
 let solve (input: string) : string =
     input.Split "\n"
-    |> Seq.filter (System.String.IsNullOrWhiteSpace >> not)
+    |> Seq.filter (fun line -> line <> "")
     |> Seq.chunkBySize 3
     |> Seq.collect (Seq.map Set.ofSeq >> Set.intersectMany)
     |> Seq.sumBy priority
