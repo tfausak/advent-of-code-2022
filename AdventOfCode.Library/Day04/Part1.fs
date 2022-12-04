@@ -2,7 +2,7 @@ module AdventOfCode.Library.Day04.Part1
 
 open AdventOfCode.Library.Common
 
-let contains (inner: 'a * 'b) (outer: 'a * 'b) : bool =
+let contains (inner: 'T * 'U) (outer: 'T * 'U) : bool =
     fst outer <= fst inner && snd outer >= snd inner
 
 let solve (input: string) : string =
