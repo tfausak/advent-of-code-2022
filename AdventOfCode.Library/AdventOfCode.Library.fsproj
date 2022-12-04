@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Common.fs" />
     <Compile Include="Day01/Part1.fs" />
     <Compile Include="Day01/Part2.fs" />
     <Compile Include="Day02/Common.fs" />
@@ -13,6 +14,7 @@
     <Compile Include="Day02/Part2.fs" />
     <Compile Include="Day03/Part1.fs" />
     <Compile Include="Day03/Part2.fs" />
+    <Compile Include="Day04/Part1.fs" />
   </ItemGroup>
 
 </Project>

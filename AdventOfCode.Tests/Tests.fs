@@ -38,3 +38,8 @@ type TestClass() =
     member this.TestDay03Part2() =
         let input = getInput 3
         Assert.AreEqual("2641", Day03.Part2.solve input)
+
+    [<TestMethod>]
+    member this.TestDay04Part1() =
+        let input = getInput 4
+        Assert.AreEqual("466", Day04.Part1.solve input)
