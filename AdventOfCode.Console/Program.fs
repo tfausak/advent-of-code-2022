@@ -8,7 +8,6 @@ let main (arguments: string array) : int =
         | _ -> failwith $"I did not expect these arguments: %A{arguments}."
 
     let input = stdin.ReadToEnd()
-    let output = solve day part input
 
     match solve day part input with
     | None -> failwith $"I don't know how to solve day %A{day} part %A{part}."
