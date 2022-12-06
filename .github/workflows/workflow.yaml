@@ -1,5 +1,12 @@
 on: push
 jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v3
+      - run: dotnet tool restore
+      - run: dotnet fantomas --check --recurse .
   job:
     runs-on: ubuntu-latest
     steps:
@@ -7,7 +14,6 @@ jobs:
       - uses: actions/setup-dotnet@v3
       - run: dotnet test
       - run: dotnet tool restore
-      - run: dotnet fantomas --check --recurse .
       - run: dotnet fsharplint lint AdventOfCode.sln
   docker:
     needs: job
