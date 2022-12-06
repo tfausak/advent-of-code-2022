@@ -9,3 +9,8 @@ jobs:
       - run: dotnet tool restore
       - run: dotnet fantomas --check --recurse .
       - run: dotnet fsharplint lint AdventOfCode.sln
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker/build-push-action@v3
