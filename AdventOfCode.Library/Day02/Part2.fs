@@ -21,8 +21,7 @@ let determineShape (shape: Shape) (outcome: Outcome) : Shape =
     | (_, Draw) -> shape
 
 let solve (input: string) : string =
-    input.Split "\n"
-    |> Seq.filter (fun line -> line <> "")
+    input.TrimEnd().Split "\n"
     |> Seq.sumBy (fun line ->
         let (shapeString, outcomeString) = line.Split " " |> seqToTuple |> Option.get
         let theirShape = Option.get (stringToShape shapeString)

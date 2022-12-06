@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdventOfCode.Library\AdventOfCode.Library.fsproj" />
+    <ProjectReference Include="../AdventOfCode.Library/AdventOfCode.Library.fsproj" />
   </ItemGroup>
 
 </Project>
