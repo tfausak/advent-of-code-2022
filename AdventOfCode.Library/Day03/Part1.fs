@@ -4,8 +4,7 @@ let priority (x: char) : int =
     int x - if System.Char.IsUpper x then 38 else 96
 
 let solve (input: string) : string =
-    input.Split "\n"
-    |> Seq.filter (fun line -> line <> "")
+    input.TrimEnd().Split "\n"
     |> Seq.collect (fun line ->
         let mid = line.Length / 2
         let first = line.Substring(0, mid)
