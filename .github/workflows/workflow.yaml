@@ -29,3 +29,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --image ${{ steps.meta.output.tags }}
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
