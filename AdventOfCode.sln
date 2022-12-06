@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Library", "AdventOfCode.Library\AdventOfCode.Library.fsproj", "{3AA65FF1-85DA-49CE-B87E-45FBF174B979}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Library", "AdventOfCode.Library/AdventOfCode.Library.fsproj", "{3AA65FF1-85DA-49CE-B87E-45FBF174B979}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Console", "AdventOfCode.Console\AdventOfCode.Console.fsproj", "{88AFA39A-AD92-44F8-8A78-2E4B86B8A666}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Console", "AdventOfCode.Console/AdventOfCode.Console.fsproj", "{88AFA39A-AD92-44F8-8A78-2E4B86B8A666}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Tests", "AdventOfCode.Tests\AdventOfCode.Tests.fsproj", "{04406CF6-C146-4057-89ED-4BC14CF18D50}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Tests", "AdventOfCode.Tests/AdventOfCode.Tests.fsproj", "{04406CF6-C146-4057-89ED-4BC14CF18D50}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Web", "AdventOfCode.Web\AdventOfCode.Web.fsproj", "{AC118440-7460-4966-AD3C-96242B773139}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode.Web", "AdventOfCode.Web/AdventOfCode.Web.fsproj", "{AC118440-7460-4966-AD3C-96242B773139}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
