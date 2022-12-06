@@ -4,7 +4,7 @@ open AdventOfCode.Library.Common
 
 let skipLast (source: 'T seq) : 'T seq = Seq.take (Seq.length source - 1) source
 
-let solve (input: string) : string =
+let parseInput (input: string) : (char list array) * ((int * int * int) seq) =
     let (rawStacks, rawProcedure) = input.Split "\n\n" |> seqToTuple |> Option.get
 
     let stacks =
@@ -21,6 +21,11 @@ let solve (input: string) : string =
             match line.Split " " with
             | [| "move"; count; "from"; source; "to"; target |] -> (int count, int source - 1, int target - 1)
             | step -> failwith $"invalid step: %A{step}")
+
+    (stacks, procedure)
+
+let solve (input: string) : string =
+    let (stacks, procedure) = parseInput input
 
     for (count, source, target) in procedure do
         for _ = 1 to count do
