@@ -18,9 +18,14 @@ let getRoot (context: HttpContext) : Task =
             </head>
             <body>
                 <h1>Advent of Code 2022</h1>
-                <p>
-                    <a href='https://github.com/tfausak/advent-of-code-2022'>github.com/tfausak/advent-of-code-2022</a>
-                </p>
+                <ul>
+                    <li>
+                        <a href='https://github.com/tfausak/advent-of-code-2022'>github.com/tfausak/advent-of-code-2022</a>
+                    </li>
+                    <li>
+                        <a href='https://adventofcode.com/2022'>adventofcode.com/2022</a>
+                    </li>
+                </ul>
                 <form action='/solve' method='post'>
                     <fieldset>
                         <legend>Solve</legend>
