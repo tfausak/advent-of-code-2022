@@ -4,7 +4,7 @@ open AdventOfCode.Library.Common
 
 let skipLast (source: 'T seq) : 'T seq = Seq.take (Seq.length source - 1) source
 
-let parseInput (input : string) : (char list array) * ((int * int * int) seq) =
+let parseInput (input: string) : (char list array) * ((int * int * int) seq) =
     let (rawStacks, rawProcedure) = input.Split "\n\n" |> seqToTuple |> Option.get
 
     let stacks =
