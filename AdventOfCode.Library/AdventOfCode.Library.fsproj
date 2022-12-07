@@ -20,6 +20,7 @@
     <Compile Include="Day06/Part1.fs" />
     <Compile Include="Day06/Part2.fs" />
     <Compile Include="Day07/Part1.fs" />
+    <Compile Include="Day07/Part2.fs" />
     <Compile Include="Solver.fs" />
   </ItemGroup>
 
