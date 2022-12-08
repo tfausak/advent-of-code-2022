@@ -25,7 +25,7 @@ let scoreW (map: int[,]) (row: int) (col: int) : int =
 let score (map: int[,]) (row: int) (col: int) : int =
     [ scoreN; scoreE; scoreS; scoreW ]
     |> Seq.map (fun f -> f map row col)
-    |> Seq.fold (fun a e -> a * e) 1
+    |> Seq.fold (*) 1
 
 let solve (input: string) : string =
     let map = parseInput input
