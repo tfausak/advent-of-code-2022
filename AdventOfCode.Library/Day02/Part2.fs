@@ -23,7 +23,7 @@ let determineShape (shape: Shape) (outcome: Outcome) : Shape =
 let solve (input: string) : string =
     input.TrimEnd().Split "\n"
     |> Seq.sumBy (fun line ->
-        let (shapeString, outcomeString) = line.Split " " |> seqToTuple |> Option.get
+        let (shapeString, outcomeString) = line.Split " " |> Tuple.fromSeq |> Option.get
         let theirShape = Option.get (stringToShape shapeString)
         let outcome = Option.get (stringToOutcome outcomeString)
         let myShape = determineShape theirShape outcome

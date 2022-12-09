@@ -57,7 +57,7 @@ let score (x: Shape) (y: Outcome) : int = shapeToScore x + outcomeToScore y
 let solve (input: string) : string =
     input.TrimEnd().Split "\n"
     |> Seq.sumBy (fun line ->
-        let (x1, y1) = line.Split " " |> seqToTuple |> Option.get
+        let (x1, y1) = line.Split " " |> Tuple.fromSeq |> Option.get
         let (x2, y2) = (stringToShape1 x1, stringToShape2 y1)
         let z = play x2 y2
         score y2 z)

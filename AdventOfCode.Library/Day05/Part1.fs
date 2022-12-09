@@ -6,7 +6,7 @@ let skipLast (source: 'T seq) : 'T seq = Seq.take (Seq.length source - 1) source
 
 let parseInput (input: string) : (char list array) * ((int * int * int) seq) =
     let (rawStacks, rawProcedure) =
-        input.TrimEnd().Split "\n\n" |> seqToTuple |> Option.get
+        input.TrimEnd().Split "\n\n" |> Tuple.fromSeq |> Option.get
 
     let stacks =
         rawStacks.Split "\n"
