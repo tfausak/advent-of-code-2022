@@ -1,7 +1,7 @@
 module AdventOfCode.Library.Common
 
 module Function =
-    let uncurry (f : 'T -> 'U -> 'V) (x : 'T, y : 'U) : 'V = f x y
+    let uncurry (f: 'T -> 'U -> 'V) (x: 'T, y: 'U) : 'V = f x y
 
 module String =
     let split (separator: string) (string: string) : string array = string.Split separator
@@ -16,4 +16,4 @@ module Tuple =
 
     let map (f: 'T1 -> 'T2) (g: 'U1 -> 'U2) (x: 'T1, y: 'U1) : 'T2 * 'U2 = (f x, g y)
 
-    let swap (x : 'T, y : 'U) : 'U * 'T = (y, x)
+    let swap (x: 'T, y: 'U) : 'U * 'T = (y, x)
