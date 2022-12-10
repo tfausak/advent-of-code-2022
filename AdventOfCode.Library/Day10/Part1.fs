@@ -20,7 +20,7 @@ let parseInstructions (input: string) : Instruction seq =
 
 let rec evaluate (register: int) (instructions: Instruction list) : int list =
     match instructions with
-    | [] -> [ register ]
+    | [] -> []
     | i :: is ->
         match i with
         | Addx v -> register :: register :: evaluate (register + v) is
