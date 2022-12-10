@@ -6,8 +6,16 @@ module Function =
 
     let uncurry (f: 'T -> 'U -> 'V) (x: 'T, y: 'U) : 'V = f x y
 
+module Int32 =
+    let fromString (string: string) : int option =
+        match System.Int32.TryParse string with
+        | (true, n) -> Some n
+        | _ -> None
+
 module String =
     let split (separator: string) (string: string) : string array = string.Split separator
+
+    let trimEnd (string: string) : string = string.TrimEnd()
 
 module Tuple =
     let create (x: 'T) (y: 'U) : 'T * 'U = (x, y)

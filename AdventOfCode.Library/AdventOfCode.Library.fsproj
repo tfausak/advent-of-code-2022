@@ -25,6 +25,7 @@
     <Compile Include="Day08/Part2.fs" />
     <Compile Include="Day09/Part1.fs" />
     <Compile Include="Day09/Part2.fs" />
+    <Compile Include="Day10/Part1.fs" />
     <Compile Include="Solver.fs" />
   </ItemGroup>
 
