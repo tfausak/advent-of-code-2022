@@ -18,7 +18,7 @@ let stringToDirection (string: string) : Direction option =
 
 let origin = (0, 0)
 
-let solve (input: string) : string =
+let parseInput (input : string) : Direction seq =
     input.TrimEnd().Split "\n"
     |> Seq.collect (
         String.split " "
@@ -28,6 +28,9 @@ let solve (input: string) : string =
         >> Tuple.swap
         >> Function.uncurry Seq.replicate
     )
+
+let moveHead (directions : Direction seq) : (int * int) seq =
+    directions
     |> Seq.scan
         (fun (x, y) direction ->
             match direction with
@@ -36,6 +39,9 @@ let solve (input: string) : string =
             | R -> (x + 1, y)
             | U -> (x, y + 1))
         origin
+
+let moveTail (heads : (int * int) seq) : (int * int) seq =
+    heads
     |> Seq.scan
         (fun (tx, ty) (hx, hy) ->
             if tx = hx && ty + 2 = hy then (tx, ty + 1)
@@ -44,14 +50,24 @@ let solve (input: string) : string =
             else if ty = hy && tx - 2 = hx then (tx - 1, ty)
             else if tx + 1 = hx && ty + 2 = hy then (tx + 1, ty + 1)
             else if tx + 2 = hx && ty + 1 = hy then (tx + 1, ty + 1)
+            else if tx + 2 = hx && ty + 2 = hy then (tx + 1, ty + 1)
             else if tx - 1 = hx && ty + 2 = hy then (tx - 1, ty + 1)
             else if tx - 2 = hx && ty + 1 = hy then (tx - 1, ty + 1)
+            else if tx - 2 = hx && ty + 2 = hy then (tx - 1, ty + 1)
             else if tx + 1 = hx && ty - 2 = hy then (tx + 1, ty - 1)
             else if tx + 2 = hx && ty - 1 = hy then (tx + 1, ty - 1)
+            else if tx + 2 = hx && ty - 2 = hy then (tx + 1, ty - 1)
             else if tx - 1 = hx && ty - 2 = hy then (tx - 1, ty - 1)
             else if tx - 2 = hx && ty - 1 = hy then (tx - 1, ty - 1)
+            else if tx - 2 = hx && ty - 2 = hy then (tx - 1, ty - 1)
             else (tx, ty))
         origin
+
+let solve (input: string) : string =
+    input
+    |> parseInput
+    |> moveHead
+    |> moveTail
     |> Set.ofSeq
     |> Set.count
     |> string
