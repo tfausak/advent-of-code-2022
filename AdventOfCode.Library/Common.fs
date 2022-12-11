@@ -17,6 +17,8 @@ module String =
 
     let trimEnd (string: string) : string = string.TrimEnd()
 
+    let trimStart (string: string) : string = string.TrimStart()
+
 module Tuple =
     let create (x: 'T) (y: 'U) : 'T * 'U = (x, y)
 

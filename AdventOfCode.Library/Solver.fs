@@ -22,4 +22,5 @@ let solve (day: int) (part: int) (input: string) : string option =
     | (9, 2) -> Some <| Day09.Part2.solve input
     | (10, 1) -> Some <| Day10.Part1.solve input
     | (10, 2) -> Some <| Day10.Part2.solve input
+    | (11, 1) -> Some <| Day11.Part1.solve input
     | _ -> None
