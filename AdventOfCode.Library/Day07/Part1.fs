@@ -30,9 +30,9 @@ let getFiles (input: string) : (string list * (string * int)) list =
     |> snd
 
 let rec hasPrefix (prefix: 'T list) (list: 'T list) : bool =
-    match (prefix, list) with
-    | ([], _) -> true
-    | (ph :: pt, lh :: lt) when ph = lh -> hasPrefix pt lt
+    match prefix, list with
+    | [], _ -> true
+    | ph :: pt, lh :: lt when ph = lh -> hasPrefix pt lt
     | _ -> false
 
 let rec prefixes (list: 'T list) : 'T list list =
