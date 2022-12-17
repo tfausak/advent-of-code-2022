@@ -29,16 +29,16 @@ type Outcome =
     | Win
 
 let play (x: Shape) (y: Shape) : Outcome =
-    match (x, y) with
-    | (Paper, Paper) -> Draw
-    | (Paper, Rock) -> Lose
-    | (Paper, Scissors) -> Win
-    | (Rock, Paper) -> Win
-    | (Rock, Rock) -> Draw
-    | (Rock, Scissors) -> Lose
-    | (Scissors, Paper) -> Lose
-    | (Scissors, Rock) -> Win
-    | (Scissors, Scissors) -> Draw
+    match x, y with
+    | Paper, Paper -> Draw
+    | Paper, Rock -> Lose
+    | Paper, Scissors -> Win
+    | Rock, Paper -> Win
+    | Rock, Rock -> Draw
+    | Rock, Scissors -> Lose
+    | Scissors, Paper -> Lose
+    | Scissors, Rock -> Win
+    | Scissors, Scissors -> Draw
 
 let shapeToScore (x: Shape) : int =
     match x with

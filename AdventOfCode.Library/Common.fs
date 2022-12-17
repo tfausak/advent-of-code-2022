@@ -9,7 +9,7 @@ module Function =
 module Int32 =
     let fromString (string: string) : int option =
         match System.Int32.TryParse string with
-        | (true, n) -> Some n
+        | true, n -> Some n
         | _ -> None
 
 module String =

@@ -11,14 +11,14 @@ let stringToOutcome (x: string) : Outcome option =
     | _ -> None
 
 let determineShape (shape: Shape) (outcome: Outcome) : Shape =
-    match (shape, outcome) with
-    | (Paper, Lose) -> Rock
-    | (Paper, Win) -> Scissors
-    | (Rock, Lose) -> Scissors
-    | (Rock, Win) -> Paper
-    | (Scissors, Lose) -> Paper
-    | (Scissors, Win) -> Rock
-    | (_, Draw) -> shape
+    match shape, outcome with
+    | Paper, Lose -> Rock
+    | Paper, Win -> Scissors
+    | Rock, Lose -> Scissors
+    | Rock, Win -> Paper
+    | Scissors, Lose -> Paper
+    | Scissors, Win -> Rock
+    | _, Draw -> shape
 
 let solve (input: string) : string =
     input.TrimEnd().Split "\n"
