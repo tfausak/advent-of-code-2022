@@ -84,3 +84,6 @@ type TestClass() =
 
     [<TestMethod>]
     member this.TestDay12Part2() = test 12 2 "451"
+
+    [<TestMethod>]
+    member this.TestDay13Part1() = test 13 1 "6187"
