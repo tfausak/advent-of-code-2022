@@ -22,9 +22,7 @@ let solve (input: string) : string =
             | _ -> int c - int 'a')
         |> flow target
 
-    Seq.allPairs
-        (seq { 0 .. Array2D.length1 heights - 1 })
-        (seq { 0 .. Array2D.length2 heights - 1 })
+    Seq.allPairs (seq { 0 .. Array2D.length1 heights - 1 }) (seq { 0 .. Array2D.length2 heights - 1 })
     |> Seq.filter (fun (row, col) -> heights[row, col] = 'S' || heights[row, col] = 'a')
     |> Seq.choose (fun index -> Map.tryFind index distances)
     |> Seq.min
