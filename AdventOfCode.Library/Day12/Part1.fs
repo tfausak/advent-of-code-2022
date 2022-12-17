@@ -34,7 +34,6 @@ let rec flowWith
     match Queue.dequeue frontier with
     | None -> distances
     | Some((row, col), queue) ->
-        printfn $"at %A{(row, col)} %A{queue}"
         let distance = Map.find (row, col) distances
 
         let neighbors =
