@@ -31,4 +31,5 @@ let solve (day: int) (part: int) (input: string) : string option =
     | 14, 1 -> Some <| Day14.Part1.solve input
     | 14, 2 -> Some <| Day14.Part2.solve input
     | 15, 1 -> Some <| Day15.Part1.solve input
+    | 15, 2 -> Some <| Day15.Part2.solve input
     | _ -> None
