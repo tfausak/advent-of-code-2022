@@ -13,19 +13,6 @@ module Array2D =
         && col >= 0
         && col < Array2D.length2 array
 
-module Queue =
-    type Queue<'T> = 'T list * 'T list
-
-    let empty: 'T Queue = [], []
-
-    let rec dequeue (q: 'T Queue) : ('T * 'T Queue) option =
-        match q with
-        | x :: xs, _ -> Some(x, (xs, snd q))
-        | [], [] -> None
-        | _, ys -> dequeue (List.rev ys, [])
-
-    let enqueue (x: 'T) (q: 'T Queue) : 'T Queue = fst q, x :: snd q
-
 let rec flowWith
     (xs: int[,])
     (frontier: (int * int) Queue.Queue)

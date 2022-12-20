@@ -12,6 +12,19 @@ module Int32 =
         | true, n -> Some n
         | _ -> None
 
+module Queue =
+    type Queue<'T> = 'T list * 'T list
+
+    let empty: 'T Queue = [], []
+
+    let rec dequeue (q: 'T Queue) : ('T * 'T Queue) option =
+        match q with
+        | x :: xs, _ -> Some(x, (xs, snd q))
+        | [], [] -> None
+        | _, ys -> dequeue (List.rev ys, [])
+
+    let enqueue (x: 'T) (q: 'T Queue) : 'T Queue = fst q, x :: snd q
+
 module String =
     let split (separator: string) (string: string) : string array = string.Split separator
 
